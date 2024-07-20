@@ -1,29 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EclipseTasks.Core.Enum;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using EclipseTasks.Core.Enums;
 
 namespace EclipseTasks.Core.Entities
 {
-    public class User: BaseEntity
+    public class User
     {
-        public string Name { get; set; }
-        public UserRole Role { get; set; }
-
-        public User()
-        {
-
-        }
-
-        public User(string id, string name, UserRole role)
-        {
-            Id = id;
-            Name = name;
-            Role = role;
-        }
+        public Guid Id { get; set; }
+        public string Email { get; set; }
+        public AccessMode AccessMode { get; set; }
     }
 }

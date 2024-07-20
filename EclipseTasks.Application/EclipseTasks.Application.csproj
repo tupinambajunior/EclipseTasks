@@ -3,13 +3,23 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-	  <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\" />
-    <Folder Include="Services\Implementations\" />
-    <Folder Include="Services\Interfaces\" />
+    <Compile Remove="Registers\**" />
+    <EmbeddedResource Remove="Registers\**" />
+    <None Remove="Registers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Extensions.FluentValidation.AspNetCore" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EclipseTasks.Core\EclipseTasks.Core.csproj" />
   </ItemGroup>
 
 </Project>

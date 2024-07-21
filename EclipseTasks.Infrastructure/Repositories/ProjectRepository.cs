@@ -1,19 +1,28 @@
-﻿using EclipseTasks.Core.Entities;
-using EclipseTasks.Core.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using EclipseTasks.Core.Entities;
+using EclipseTasks.Core.Repository;
+using EclipseTasks.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace EclipseTasks.Infrastructure.Repositories
 {
-    public class ProjectRepository : Repository<Project>, IProjectRepository
+    public class ProjectRepository : GenericRepository<Project>, IProjectRepository
     {
-        private readonly PgContext _dbContext;
-        public ProjectRepository(PgContext dbContext) : base(dbContext)
+        private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
+
+        public ProjectRepository(AppDbContext context, IMapper mapper) : base(context)
         {
-            _dbContext = dbContext;
+            _context = context;
+            _mapper = mapper;
+        }
+
+        public new async Task<IEnumerable<ProjectNameDTO>> ListAsync()
+        {
+            return await _context.Projects
+                .ProjectTo<ProjectNameDTO>(_mapper.ConfigurationProvider)
+                .ToArrayAsync();
         }
     }
 }

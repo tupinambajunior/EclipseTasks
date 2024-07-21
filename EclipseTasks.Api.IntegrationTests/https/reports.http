@@ -1,0 +1,6 @@
+@EclipseTasks.Api_HostAddress = http://localhost:5245
+
+GET {{EclipseTasks.Api_HostAddress}}/reports/productivity
+Authentication: gestor@eclipseworks.com.br
+
+####

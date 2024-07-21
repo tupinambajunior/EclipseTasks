@@ -1,0 +1,11 @@
+@EclipseTasks.Api_HostAddress = http://localhost:5245
+
+POST {{EclipseTasks.Api_HostAddress}}/comments/52c89144-ac0e-4f45-9fd7-cb73ac280aa8
+Content-Type: application/json
+Authentication: gustavo@eclipseworks.com.br
+
+{
+    "Comment": "Essa tarefa deve ter uma data para ser finalizada"
+}
+
+####

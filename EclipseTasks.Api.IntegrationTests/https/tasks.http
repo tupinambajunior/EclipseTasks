@@ -1,0 +1,39 @@
+@EclipseTasks.Api_HostAddress = http://localhost:5245
+
+POST {{EclipseTasks.Api_HostAddress}}/tasks/23216df9-2c48-4116-2c0e-08dc54c1c865
+Content-Type: application/json
+Authentication: gustavo@eclipseworks.com.br
+
+{
+    "Title": "Minha segunda tarefa",
+    "Description": "my description",
+    "ProjectId": "23216df9-2c48-4116-2c0e-08dc54c1c865",
+    "Deadline": "2024-04-19",
+    "Status": 1,
+    "Priority": 1,
+    "ActorKey": "gustavo@eclipseworks.com.br"
+}
+
+####
+
+GET {{EclipseTasks.Api_HostAddress}}/tasks/23216df9-2c48-4116-2c0e-08dc54c1c865
+
+####
+
+PUT {{EclipseTasks.Api_HostAddress}}/tasks/23216df9-2c48-4116-2c0e-08dc54c1c865
+Content-Type: application/json
+Authentication: gustavo@eclipseworks.com.br
+
+{
+    "id": "52c89144-ac0e-4f45-9fd7-cb73ac280aa8",
+    "Title": "Minha primeria tarefa alterada",
+    "Description": "my description alterada",
+    "Deadline": "2024-04-19",
+    "Status": 2,
+    "ActorKey": "gustavo@eclipseworks.com.br"
+}
+
+####
+
+DELETE {{EclipseTasks.Api_HostAddress}}/tasks/23216df9-2c48-4116-2c0e-08dc54c1c865/f158a861-099c-4ae1-88ec-599ab79a8930
+Authentication: gustavo@eclipseworks.com.br

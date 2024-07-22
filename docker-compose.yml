@@ -1,7 +1,8 @@
-version: '3.9'
+version: '3.4'
 
 services:
-    app:
+    eclipsetasks.api:
+        image: ${DOCKER_REGISTRY-}eclipsetasksapi
         build:
             context: .
             dockerfile: EclipseTasks.Api/Dockerfile

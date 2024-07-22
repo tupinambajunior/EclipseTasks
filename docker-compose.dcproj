@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>433a581c-6e1d-4a50-a8db-c0cbe519d325</ProjectGuid>
+    <ProjectGuid>25cfc845-2964-4051-bc7d-4436fa81bc8b</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>eclipsetasks.api</DockerServiceName>
